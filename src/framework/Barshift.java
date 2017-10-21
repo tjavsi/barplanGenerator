@@ -17,4 +17,8 @@ public interface Barshift {
     public HashSet<Bartender> getBartenders();
 
     public Bartender getSupervisor();
+
+    public void addBartender(Bartender bartender);
+
+    public void printBar();
 }

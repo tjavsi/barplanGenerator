@@ -10,9 +10,10 @@ public class PlanBuilderImpl implements PlanBuilder{
     private HashSet<Workstation> stations = null;
     private Plan plan = null;
 
-    public PlanBuilderImpl(BuildingStrategy strategy) {
+    public PlanBuilderImpl(BuildingStrategy strategy, HashSet<Workstation> stations, String name) {
         this.strategy = strategy;
-        plan = new PlanImpl();
+        this.stations = stations;
+        plan = new PlanImpl(name, stations);
     }
 
     @Override
@@ -23,6 +24,11 @@ public class PlanBuilderImpl implements PlanBuilder{
     @Override
     public Plan getPlan() {
         return plan;
+    }
+
+    @Override
+    public HashSet<Bartender> getBartenders() {
+        return bartenders;
     }
 
     public void addStaff(HashSet<Bartender> bartenders) {

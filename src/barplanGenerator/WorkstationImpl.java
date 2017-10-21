@@ -10,7 +10,7 @@ public class WorkstationImpl implements Workstation{
     private final WorkstationType type;
     private int openingTime;
     private int closingTime;
-    private ArrayList<Barshift> barshifts;
+    private ArrayList<Barshift> barshifts = new ArrayList<>();
 
 
     public WorkstationImpl(WorkstationType type, int openingTime, int closingTime) {

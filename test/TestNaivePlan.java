@@ -1,30 +1,30 @@
+import barplanGenerator.BarshiftImpl;
 import barplanGenerator.BartenderImpl;
 import barplanGenerator.PlanBuilderImpl;
 import barplanGenerator.WorkstationImpl;
 import barplanGenerator.strategies.NaiveBuildingStrategy;
-import framework.Bartender;
-import framework.PlanBuilder;
-import framework.Workstation;
-import framework.WorkstationType;
+import framework.*;
 import org.junit.*;
 
 import java.util.HashSet;
 
 import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNull.notNullValue;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 public class TestNaivePlan {
     private PlanBuilderImpl builder;
+    private String name = "TrivielFest";
 
     @Before
     public void setUp() {
-        builder = new PlanBuilderImpl(new NaiveBuildingStrategy());
+        HashSet<Workstation> stations = new HashSet<>();
+        stations.add(new WorkstationImpl(WorkstationType.DRINKSBAR, 21,22));
+        builder = new PlanBuilderImpl(new NaiveBuildingStrategy(), stations, name);
     }
 
     @Test
     public void shouldBeAbleToMakeOneBarWithOneShift() {
+
         HashSet<Bartender> bartenders = new HashSet<>();
         BartenderImpl p1 = new BartenderImpl("SEKR", 20, 3);
         p1.addWorkstation(WorkstationType.DRINKSBAR);
@@ -44,12 +44,14 @@ public class TestNaivePlan {
         bartenders.add(p5);
         builder.addStaff(bartenders);
 
-        HashSet<Workstation> stations = new HashSet<>();
-        stations.add(new WorkstationImpl(WorkstationType.DRINKSBAR, 21, 22));
-        builder.addWorkstations(stations);
-
         builder.build();
-        assertThat(builder.getPlan().);
+        for (Workstation w : builder.getPlan().getWorkstations()) {
+            for(Barshift i : w.getBarshifts()) {
+                i.printBar();
+            }
+        }
+        builder.getPlan().getWorkstations();
+        assertThat(builder.getPlan().getName(), is(name));
 
 
     }

@@ -45,7 +45,14 @@ public class BarshiftImpl implements Barshift{
         return supervisor;
     }
 
-    private void addBartender(Bartender bartender) {
+    public void addBartender(Bartender bartender) {
         bartenders.add(bartender);
+    }
+
+    public void printBar(){
+        System.out.println("Supervisor is: " + supervisor);
+        for(Bartender bartender : bartenders) {
+            System.out.println("Bartender: " + bartender);
+        }
     }
 }

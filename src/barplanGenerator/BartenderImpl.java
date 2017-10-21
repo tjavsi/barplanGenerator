@@ -50,4 +50,8 @@ public class BartenderImpl implements Bartender{
     public void canBeSupervisorIn(WorkstationType station) {
         supervisorWorkstation.add(station);
     }
+
+    public String toString() {
+        return name;
+    }
 }

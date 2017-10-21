@@ -11,4 +11,6 @@ public interface Workstation {
     public int getClosingTime();
 
     public ArrayList<Barshift> getBarshifts();
+
+    public void addBarshift(Barshift barshift);
 }
