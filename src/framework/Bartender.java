@@ -14,13 +14,13 @@ public interface Bartender {
      *
      * @return
      */
-    public HashSet<WorkStation> getPossibleWorkStations();
+    public HashSet<WorkstationType> getPossibleWorkStations();
 
     /**
      *
      * @return
      */
-    public HashSet<WorkStation> getSupervisorWorkStations();
+    public HashSet<WorkstationType> getSupervisorWorkStations();
 
     /**
      *

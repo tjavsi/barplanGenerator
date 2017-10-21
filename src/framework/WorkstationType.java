@@ -1,5 +1,5 @@
 package framework;
 
-public enum WorkStation {
+public enum WorkstationType {
     DRINKSBAR, FADOELSBAR, INDGANG, LOUNGEBAR, KAMERA
 }

@@ -1,6 +1,5 @@
 package framework;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 public interface Barshift {
@@ -9,7 +8,7 @@ public interface Barshift {
      *
      * @return the type of Work Station
      */
-    public WorkStation getType();
+    public WorkstationType getType();
 
     public int startTime();
 

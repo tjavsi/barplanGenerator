@@ -2,18 +2,18 @@ package barplanGenerator;
 
 import framework.Barshift;
 import framework.Bartender;
-import framework.WorkStation;
+import framework.WorkstationType;
 
 import java.util.HashSet;
 
 public class BarshiftImpl implements Barshift{
-    private WorkStation type;
+    private WorkstationType type;
     private int startTime;
     private int endTime;
     private HashSet<Bartender> bartenders = new HashSet<>();
     private Bartender supervisor;
 
-    public BarshiftImpl(WorkStation type, int startTime, int endTime, Bartender supervisor) {
+    public BarshiftImpl(WorkstationType type, int startTime, int endTime, Bartender supervisor) {
         this.type = type;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -21,7 +21,7 @@ public class BarshiftImpl implements Barshift{
     }
 
     @Override
-    public WorkStation getType() {
+    public WorkstationType getType() {
         return type;
     }
 
